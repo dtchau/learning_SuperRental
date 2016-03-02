@@ -1,9 +1,11 @@
-<h4>{{rental.title}}</h4>
-<h5>{{rental.owner}}</h5>
-<h6>{{rental.city}}</h6>
-{{#if isImageShowing}}
-<img src="{{rental.image}}" height="150" width="150">
-  <button {{action 'hideImage'}}>Hide image</button>
+<h2>{{rental.title}}</h2>
+<p>Owner: {{rental.owner}}</p>
+<p>Type: {{rental-property-type rental.type}} - {{rental.type}}</p>
+<p>Location: {{rental.city}}</p>
+<p>Number of bedrooms: {{rental.bedrooms}}</p>
+{{#if isImageShowing }}
+    <p><img src={{rental.image}} alt={{rental.type}} width="500px"></p>
+    <button {{action "hideImage"}}>Hide image</button>
 {{else}}
-  <button {{action 'showImage'}}>Show image</button>
+    <button {{action "showImage"}}>Show image</button>
 {{/if}}
