@@ -10,18 +10,14 @@ export default Ember.Controller.extend({
       if (params !== '') {
         this._queryByCity(params).then(result => this.set('filteredList', result));
       } else {
-        this.set('filteredList').clear();
+        this.set('filteredList');
       }
     },
     search(params) {
-      console.log('search');
       if (params !== '') {
-        this._queryByCity(params).then(result => {
-          this.set('model', result);
-          console.log(result);
-        });
+        this._queryByCity(params).then(result => this.set('model', result));
       } else {
-        this.set('model').clear();
+        this.set('model', this.store.findAll('rental'));
       }
     }
   }
