@@ -1,5 +1,7 @@
 <h2>Rental list</h2>
 
+{{rental-filter filteredList=filteredList autoComplete=(action 'autoComplete') search=(action 'search')}}
+
 {{#each model as |rental|}}
   {{rental-item rental=rental}}
 {{/each}}
